@@ -1,1 +1,20 @@
 
+DirectoryIndex index.html index.php index.htm 
+
+
+RewriteEngine On 
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://awtani.co/$1 [R,L]
+
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} www.awtani.co
+RewriteRule (.*) https://awtani.co/$1 [R=301,L]
+
+Options +SymLinksIfOwnerMatch 
+RewriteEngine On 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+ErrorDocument 404 https://awtani.co/
