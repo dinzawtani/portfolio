@@ -354,6 +354,16 @@
     <a href=’https://transfer.ninja’>Transfer.Ninja</a>
   </p>
 </div>
+	
+	<script>
+		if (localStorage.getItem(‘cookieSeen’) != ‘shown’) {
+  $(‘.cookie-banner’).delay(2000).fadeIn();
+  localStorage.setItem(‘cookieSeen’,’shown’)
+};
+$(‘.close’).click(function() {
+  $(‘.cookie-banner’).fadeOut();
+})
+	</script>
     
 	
 	
